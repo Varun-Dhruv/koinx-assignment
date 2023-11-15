@@ -9,7 +9,7 @@ const Calculator = () => {
         const newDiscountLongTermGains = taxInfo.capitalGains > 0 ? taxInfo.capitalGains * 0.5 : 0;
         let netCapitalGainsTaxAmount = newCapitalGains;
         if (taxInfo.LongTermInvestment) {
-            taxInfo.netCapitalGainsTaxAmount = newCapitalGains - newDiscountLongTermGains;
+            netCapitalGainsTaxAmount = newCapitalGains - newDiscountLongTermGains;
         }
         const taxToPay = netCapitalGainsTaxAmount * taxInfo?.annualIncome?.taxRate * 0.01;
         setTaxInfo((prev) => {
